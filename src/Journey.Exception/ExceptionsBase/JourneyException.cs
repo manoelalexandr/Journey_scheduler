@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace Journey.Exception.ExceptionsBase
 {
-    public class JourneyException : SystemException
+    public abstract class JourneyException : SystemException
     {
         public JourneyException(string message) :base(message)
         {
-                                    
+                                                
         }
+
+        public abstract HttpStatusCode GetStatusCode();
+        public abstract IList<string> GetErrorMessages();
     }
 }
